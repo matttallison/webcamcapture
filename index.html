@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Webcam Capture with Camera Selection</title>
+    <title>Webcam Capture with Camera Selection and Gallery</title>
+    <style>
+        #gallery {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            white-space: nowrap; /* Ensures the images line up in a row */
+            overflow-x: auto; /* Adds a scrollbar if there are too many images */
+        }
+        #gallery img {
+            height: 100px; /* Example thumbnail size */
+            margin-right: 5px; /* Spacing between images */
+        }
+    </style>
 </head>
 <body>
     <select id="cameraSelect"></select>
     <video id="webcam" autoplay playsinline width="640" height="480"></video>
     <button id="capture">Capture Image</button>
     <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
+    <div id="gallery"></div>
 
     <script src="webcam.js"></script>
 </body>
